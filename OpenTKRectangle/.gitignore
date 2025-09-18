@@ -1,0 +1,28 @@
+# Build results
+bin/
+obj/
+out/
+
+# Visual Studio Code settings
+.vscode/
+*.code-workspace
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+
+# Backup & temp
+*.bak
+*.tmp
+*.log
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
