@@ -29,12 +29,12 @@ This work builds upon **Assignment 1 (rectangle rendering)** and extends it by a
 
 2. Restore dependencies:
    ```bash
-   dotnet restore assignment2.csproj
+   dotnet restore GAM531Math.csproj
    ```
 
 3. Run the project:
    ```bash
-   dotnet run --project assignment2.csproj
+   dotnet run --project GAM531Math.csproj
    ```
 
 4. An OpenTK window will open and show a **rectangle** with applied transformations.
