@@ -206,10 +206,10 @@ namespace OpenTKCube
 
     static class Program
     {
-        static void Main()
+        static int Main()
         {
+            Console.WriteLine("GAM531 Assignment 3 (Console App) — starting OpenTK window...");
             var gws = GameWindowSettings.Default;
-            
             gws.UpdateFrequency = 60;
 
             var nws = new NativeWindowSettings
@@ -223,6 +223,9 @@ namespace OpenTKCube
 
             using var win = new CubeWindow(gws, nws);
             win.Run();
+
+            Console.WriteLine("Window closed. Exiting cleanly.");
+            return 0;
         }
     }
 }
