@@ -38,6 +38,7 @@ dotnet run
 ```
 
 ## File Structure
+```text
 TerrainDemo/
 ├── Program.cs
 ├── Game.cs
