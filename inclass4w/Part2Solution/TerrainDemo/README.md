@@ -39,11 +39,13 @@ dotnet run
 
 ## File Structure
 TerrainDemo/
-  Program.cs
-  Game.cs
-  assets/
-    heightmap.png
-  shaders/
-    vs.glsl
-    fs.glsl
-  TerrainDemo.csproj
+├── Program.cs
+├── Game.cs
+├── assets/
+│   └── heightmap.png
+├── shaders/
+│   ├── vs.glsl
+│   └── fs.glsl
+└── TerrainDemo.csproj
+
+
