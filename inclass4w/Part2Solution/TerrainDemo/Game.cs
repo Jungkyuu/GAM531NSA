@@ -35,12 +35,9 @@ namespace WindowEngine
         // animation state
         private float time;
 
-
-        // optional placeholder to match your original API
         private Surface screen = new Surface(1, 1);
 
 
-        // simple Surface as in your sample (not used for GL)
         public class Surface { public int[] pixels; public int width, height; public Surface(int w, int h) { width = w; height = h; pixels = new int[w * h]; } }
 
         // Exercise7
@@ -171,7 +168,6 @@ namespace WindowEngine
         {
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
-            // Build MVP (use your existing model/view/proj)
             float aspect = 16f / 9f;
             int[] vp = new int[4]; GL.GetInteger(GetPName.Viewport, vp);
             if (vp[3] != 0) aspect = vp[2] / (float)vp[3];

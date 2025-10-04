@@ -14,7 +14,7 @@ namespace WindowEngine
             var native = new NativeWindowSettings
             {
                 ClientSize = new Vector2i(1280, 720),
-                Title = "OpenTK – Exercise 6 Terrain",
+                Title = "OpenTK – part2 Terrain",
                 Profile = ContextProfile.Core,
                 APIVersion = new Version(3, 3),
                 Flags = ContextFlags.Default
