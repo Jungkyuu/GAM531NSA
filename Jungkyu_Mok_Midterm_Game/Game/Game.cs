@@ -1,3 +1,4 @@
+using System;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
@@ -18,16 +19,15 @@ public class GameWindow3D : GameWindow
     private bool _lightOn = true;
     private double _elapsed;
 
-    public GameWindow3D(GameWindowSettings gws, NativeWindowSettings nws) : base(gws, nws) { }
+    public GameWindow3D(GameWindowSettings gws, NativeWindowSettings nws) : base(gws, nws) {}
 
     protected override void OnLoad()
     {
-        WindowState = OpenTK.Windowing.Common.WindowState.Fullscreen;
         base.OnLoad();
         GL.Enable(EnableCap.DepthTest);
         GL.ClearColor(0.08f, 0.09f, 0.11f, 1f);
 
-        _camera = new Camera(new Vector3(0f, 1.2f, 4.5f), Size.X / (float)Size.Y);
+        _camera = new Camera(new Vector3(0f, 2.0f, 5.0f), Size.X / (float)Size.Y);
         CursorState = CursorState.Grabbed;
 
         _shader = new Shader("Shaders/vertex.glsl", "Shaders/fragment.glsl");
@@ -35,20 +35,14 @@ public class GameWindow3D : GameWindow
 
         _cube = MeshFactory.CreateTexturedCube();
         _plane = MeshFactory.CreatePlane(10f);
-        _camera = new Camera(new Vector3(0f, 2.0f, 5.0f), Size.X / (float)Size.Y);
     }
 
     protected override void OnResize(ResizeEventArgs e)
     {
         base.OnResize(e);
-
-        
         GL.Viewport(0, 0, e.Width, e.Height);
-
         if (_camera is not null && e.Height > 0)
-        {
             _camera.AspectRatio = e.Width / (float)e.Height;
-        }
     }
 
     protected override void OnUpdateFrame(FrameEventArgs args)
@@ -63,8 +57,7 @@ public class GameWindow3D : GameWindow
             else Close();
         }
 
-        if (input.IsKeyPressed(Keys.E))
-            _lightOn = !_lightOn;
+        if (input.IsKeyPressed(Keys.E)) _lightOn = !_lightOn;
 
         float speed = 3.5f;
         float dt = (float)args.Time;
@@ -102,11 +95,18 @@ public class GameWindow3D : GameWindow
         _texture.Bind(TextureUnit.Texture0);
         _shader.SetInt("uTex0", 0);
 
+        // Plane
         _plane.Model = Matrix4.Identity;
         _shader.SetMatrix4("uModel", _plane.Model);
         _plane.Draw();
 
+        // Cube #1
         _cube.Model = Matrix4.CreateTranslation(-1.25f, 0.5f, 0f);
+        _shader.SetMatrix4("uModel", _cube.Model);
+        _cube.Draw();
+
+        // Cube #2
+        _cube.Model = Matrix4.CreateTranslation(1.5f, 0.5f, 0f);
         _shader.SetMatrix4("uModel", _cube.Model);
         _cube.Draw();
 
