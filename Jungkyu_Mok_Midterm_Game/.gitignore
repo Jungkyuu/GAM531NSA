@@ -1,0 +1,34 @@
+# ============================
+# C# + .NET + OpenTK Game Project
+# ============================
+
+# Build output 
+bin/
+obj/
+
+# NuGet packages & artifacts
+*.nupkg
+packages/
+artifacts/
+
+# IDE personal settings
+*.user
+*.suo
+*.rsuser
+
+# IDE folders
+.vs/
+.idea/
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Cache / logs / temp files
+*.log
+*.tmp
+*.cache
+*.bak
+
+# Shader cache 
+*.glslcache
