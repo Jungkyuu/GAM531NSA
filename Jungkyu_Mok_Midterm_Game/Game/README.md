@@ -66,21 +66,24 @@ dotnet run
 ```
 
 
-### Project Structure
-Game/
- ├── Program.cs
- ├── Game.cs
- ├── GL/
- │   ├── Shader.cs
- │   ├── Texture.cs
- │   ├── Mesh.cs
- │   └── Camera.cs
- ├── Shaders/
- │   ├── vertex.glsl
- │   └── fragment.glsl
- └── Assets/
-     └── checker.png
-
+## Project Structure
+```bash
+└── Game
+    ├── Assets
+    │   └── checker.png
+    ├── GL
+    │   ├── Camera.cs
+    │   ├── Mesh.cs
+    │   ├── Shader.cs
+    │   └── Texture.cs
+    ├── Game.cs
+    ├── Game.csproj
+    ├── Program.cs
+    ├── README.md
+    └── Shaders
+        ├── fragment.glsl
+        └── vertex.glsl
+```
 
 ## Credits
 
