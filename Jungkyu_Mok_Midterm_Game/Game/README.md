@@ -10,7 +10,7 @@ It demonstrates key OpenGL concepts including:
 - Interactive light toggle
 
 The user can move freely in the scene, look around, and toggle a dynamic moving light.
-
+Development Environment: macOS + VS Code + .NET CLI (no Visual Studio solution file required)
 ---
 
 ## 🎮 Gameplay Instructions
