@@ -107,8 +107,8 @@ namespace BreakoutCollisionDemo
             const int bricksRows = 5;
             GameObject[] bricks = new GameObject[bricksRows * bricksCols];
 
-            float brickWidth = 100.0f;
-            float brickHeight = 60.0f;
+            float brickWidth = 60.0f;
+            float brickHeight = 20.0f;
             float offsetX = 50.0f;
             float offsetY = 50.0f;
             float spacing = 8.0f;
